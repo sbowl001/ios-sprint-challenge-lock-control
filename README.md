@@ -37,3 +37,5 @@ The requirements for this project are as follows:
     - Upon ending the touch, the thumb view should animate by springing back to the starting position if it's below 80% of the way down the track, or unlock if it's past 80% of the track. Change the lock's image to the `unlocked` image from the assets folder.
     - Once unlocked, user interaction should be disabled. Create a `reset` method that will "lock" the control by putting the thumb view back to its starting position and resetting the image back to the locked image. 
     - The reset button should appear when the button is unlocked, and disappear when the reset button is tapped. This should be animated.
+    
+**NOTE: You are not allowed to use a UISlider or any other subclass of `UIControl` other than one you create yourself. This wholly defeats the purpose of this sprint challenge.** 
