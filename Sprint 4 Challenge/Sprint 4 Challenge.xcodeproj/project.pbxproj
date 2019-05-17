@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		468B89D42137397400E7FF73 = {
 			isa = PBXGroup;
 			children = (
-				468B89DF2137397400E7FF73 /* Sprint 6 Challenge */,
+				468B89DF2137397400E7FF73 /* Sprint 4 Challenge */,
 				468B89DE2137397400E7FF73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		468B89DE2137397400E7FF73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */,
+				468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
+		468B89DF2137397400E7FF73 /* Sprint 4 Challenge */ = {
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
@@ -61,27 +61,28 @@
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
-			path = "Sprint 6 Challenge";
+			path = "Sprint 4 Challenge";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		468B89DC2137397400E7FF73 /* Sprint 6 Challenge */ = {
+		468B89DC2137397400E7FF73 /* Sprint 4 Challenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 6 Challenge" */;
+			buildConfigurationList = 468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 4 Challenge" */;
 			buildPhases = (
 				468B89D92137397400E7FF73 /* Sources */,
 				468B89DA2137397400E7FF73 /* Frameworks */,
 				468B89DB2137397400E7FF73 /* Resources */,
+				33A5D96D228F0A96007467EF /* Run Script - swiftlint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Sprint 6 Challenge";
+			name = "Sprint 4 Challenge";
 			productName = "Sprint 6 Challenge";
-			productReference = 468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */;
+			productReference = 468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 6 Challenge" */;
+			buildConfigurationList = 468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 4 Challenge" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				468B89DC2137397400E7FF73 /* Sprint 6 Challenge */,
+				468B89DC2137397400E7FF73 /* Sprint 4 Challenge */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +130,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33A5D96D228F0A96007467EF /* Run Script - swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		468B89D92137397400E7FF73 /* Sources */ = {
@@ -281,14 +303,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-6-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-4-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -298,14 +320,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-6-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-4-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -313,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 6 Challenge" */ = {
+		468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 4 Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				468B89ED2137397500E7FF73 /* Debug */,
@@ -322,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 6 Challenge" */ = {
+		468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 4 Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				468B89F02137397500E7FF73 /* Debug */,
