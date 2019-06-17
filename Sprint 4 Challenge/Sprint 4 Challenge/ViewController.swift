@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sliderContainer: UIView!
     
+    @IBOutlet weak var customControl: CustomControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()

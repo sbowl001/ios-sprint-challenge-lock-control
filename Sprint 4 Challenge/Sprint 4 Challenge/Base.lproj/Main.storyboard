@@ -57,6 +57,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="OjD-DJ-BAF"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="customControl" destination="62Z-Ii-L6O" id="Gzb-sG-Plg"/>
                         <outlet property="grayContainer" destination="nyc-vu-MDd" id="e8e-Kh-tCr"/>
                         <outlet property="lockImage" destination="HYW-bj-Ly0" id="e4b-7i-TT3"/>
                         <outlet property="resetButton" destination="OjD-DJ-BAF" id="wbQ-1x-Tih"/>
