@@ -18,17 +18,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sliderContainer: UIView!
     
+
     @IBOutlet weak var customControl: CustomControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        resetButton.title = ""
         appearanceSet()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func slidingAction(_sender: CustomControl) {
+        if customControl.isUnlocked {
+            lockImage.image = UIImage(named: "Unlocked")
+            customControl.isUserInteractionEnabled = true
+            resetButton.title = "Reset"
+        }
+    }
+ 
+    @IBAction func resetTapped(_ sender: UIBarButtonItem) {
+        customControl.reset()
+        lockImage.image = UIImage(named: "Locked")
+        resetButton.title = ""
     }
     
     func appearanceSet() {

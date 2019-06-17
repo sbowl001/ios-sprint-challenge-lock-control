@@ -28,9 +28,12 @@
                                             <constraint firstAttribute="height" constant="155" id="xKl-qg-XfK"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62Z-Ii-L6O">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62Z-Ii-L6O" customClass="CustomControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="5" y="237.5" width="290" height="51.5"/>
                                         <color key="backgroundColor" white="0.44932725694444442" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="slidingActionWith_sender:" destination="BYZ-38-t0r" eventType="valueChanged" id="8o0-QX-JBC"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,10 +57,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="iuA-Qo-fj2">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="OjD-DJ-BAF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="OjD-DJ-BAF">
+                            <connections>
+                                <action selector="resetTapped:" destination="BYZ-38-t0r" id="Y08-lK-Vop"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="customControl" destination="62Z-Ii-L6O" id="Gzb-sG-Plg"/>
+                        <outlet property="customControl" destination="62Z-Ii-L6O" id="j78-L1-dah"/>
                         <outlet property="grayContainer" destination="nyc-vu-MDd" id="e8e-Kh-tCr"/>
                         <outlet property="lockImage" destination="HYW-bj-Ly0" id="e4b-7i-TT3"/>
                         <outlet property="resetButton" destination="OjD-DJ-BAF" id="wbQ-1x-Tih"/>
