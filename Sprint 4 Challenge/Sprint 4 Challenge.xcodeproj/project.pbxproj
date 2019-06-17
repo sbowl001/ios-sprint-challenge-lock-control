@@ -13,6 +13,7 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		A31F322522B72CB3008C9B01 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F322422B72CB3008C9B01 /* AppearanceHelper.swift */; };
+		A31F322722B73D8F008C9B01 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F322622B73D8F008C9B01 /* CustomControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A31F322422B72CB3008C9B01 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		A31F322622B73D8F008C9B01 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				A31F322422B72CB3008C9B01 /* AppearanceHelper.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
+				A31F322622B73D8F008C9B01 /* CustomControl.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
@@ -162,6 +165,7 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				A31F322722B73D8F008C9B01 /* CustomControl.swift in Sources */,
 				A31F322522B72CB3008C9B01 /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

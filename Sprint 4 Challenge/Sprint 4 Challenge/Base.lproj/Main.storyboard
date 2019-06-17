@@ -18,24 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyc-vu-MDd">
-                                <rect key="frame" x="61" y="137" width="273" height="282"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyc-vu-MDd">
+                                <rect key="frame" x="37.5" y="164" width="300" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-bj-Ly0">
-                                        <rect key="frame" x="58" y="41" width="157" height="184"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-bj-Ly0">
+                                        <rect key="frame" x="85" y="72.5" width="130" height="155"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="rMx-7y-2Ki"/>
+                                            <constraint firstAttribute="height" constant="155" id="xKl-qg-XfK"/>
+                                        </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62Z-Ii-L6O">
+                                        <rect key="frame" x="5" y="237.5" width="290" height="51.5"/>
+                                        <color key="backgroundColor" white="0.44932725694444442" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="62Z-Ii-L6O" secondAttribute="trailing" constant="5" id="B4m-nK-aji"/>
+                                    <constraint firstItem="HYW-bj-Ly0" firstAttribute="centerY" secondItem="nyc-vu-MDd" secondAttribute="centerY" id="ERF-EC-G0G"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="62Z-Ii-L6O" secondAttribute="bottom" constant="3" id="MMI-j9-Lsr"/>
+                                    <constraint firstItem="62Z-Ii-L6O" firstAttribute="top" secondItem="HYW-bj-Ly0" secondAttribute="bottom" constant="10" id="MeC-cY-5qt"/>
+                                    <constraint firstItem="HYW-bj-Ly0" firstAttribute="centerX" secondItem="nyc-vu-MDd" secondAttribute="centerX" id="eui-gG-oQ9"/>
+                                    <constraint firstAttribute="width" secondItem="nyc-vu-MDd" secondAttribute="height" multiplier="1:1" id="fPc-Mf-WEo"/>
+                                    <constraint firstItem="62Z-Ii-L6O" firstAttribute="leading" secondItem="nyc-vu-MDd" secondAttribute="leading" constant="5" id="qzc-Ru-m9t"/>
+                                    <constraint firstAttribute="width" constant="300" id="vQ7-38-oyJ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nyc-vu-MDd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1y0-a3-dzq"/>
+                            <constraint firstItem="nyc-vu-MDd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Um5-9N-CX5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="iuA-Qo-fj2">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="OjD-DJ-BAF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="grayContainer" destination="nyc-vu-MDd" id="e8e-Kh-tCr"/>
+                        <outlet property="lockImage" destination="HYW-bj-Ly0" id="e4b-7i-TT3"/>
+                        <outlet property="resetButton" destination="OjD-DJ-BAF" id="wbQ-1x-Tih"/>
+                        <outlet property="sliderContainer" destination="62Z-Ii-L6O" id="0p1-KN-ds1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
