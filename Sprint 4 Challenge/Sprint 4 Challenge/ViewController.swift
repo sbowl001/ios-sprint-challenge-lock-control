@@ -26,10 +26,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         resetButton.title = ""
         appearanceSet()
+       
+       
     }
 
     
     @IBAction func slidingAction(_sender: CustomControl) {
+        
         if customControl.isUnlocked {
             lockImage.image = UIImage(named: "Unlocked")
             customControl.isUserInteractionEnabled = true
@@ -38,7 +41,7 @@ class ViewController: UIViewController {
     }
  
     @IBAction func resetTapped(_ sender: UIBarButtonItem) {
-        customControl.reset()
+//        customControl.reset()
         lockImage.image = UIImage(named: "Locked")
         resetButton.title = ""
     }
