@@ -17,7 +17,7 @@ class CustomControl: UIControl {
     
     var ball = UIView()
     private var ballWidth: CGFloat {
-        return self.frame.height * 0.8 
+        return self.frame.height * 0.8
     }
 //    var ballFrame = UIView()
     
@@ -27,7 +27,7 @@ class CustomControl: UIControl {
     }
     
     
-   func configureBall() {
+   private func configureBall() {
     
         ball.isUserInteractionEnabled = true
         ball.frame = CGRect(x: 5, y: 5, width: ballWidth, height: ballWidth)
@@ -35,6 +35,39 @@ class CustomControl: UIControl {
         ball.layer.cornerRadius = ballWidth / 2
         
         self.addSubview(ball)
+    }
+    
+    
+    private func calculatePercentMove(with touchPoint: CGPoint) {
+        //from within the width of ballFrame slider
+        
+        let sliderContainerWidth = self.bounds.width
+        let startPosition  = ball.frame.width + 5
+        let endPosition = sliderContainerWidth - 5
+        let distance = startPosition - touchPoint.x
+        let percentCalculated = Double(distance / (endPosition - startPosition))
+        percentageComplete = abs(percentCalculated)
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            
+        }
+        sendActions(for: [.touchDown, .valueChanged])
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        <#code#>
     }
     
 //    private var circleWidth: CGFloat {
