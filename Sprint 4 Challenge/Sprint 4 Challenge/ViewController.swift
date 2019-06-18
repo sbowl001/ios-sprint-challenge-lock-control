@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     }
  
     @IBAction func resetTapped(_ sender: UIBarButtonItem) {
-//        customControl.reset()
+        customControl.reset()
         lockImage.image = UIImage(named: "Locked")
         resetButton.title = ""
     }

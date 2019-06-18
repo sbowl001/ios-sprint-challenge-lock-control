@@ -19,6 +19,8 @@ class CustomControl: UIControl {
     private var ballWidth: CGFloat {
         return self.frame.height * 0.8
     }
+ 
+       
 //    var ballFrame = UIView()
     
     override func layoutSubviews() {
@@ -52,24 +54,74 @@ class CustomControl: UIControl {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
-            
+            sendActions(for: [.touchDown, .valueChanged])
+        } else {
+            return false
         }
-        sendActions(for: [.touchDown, .valueChanged])
+        
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        let touchPoint = touch.location(in: self)
+        
+        if self.bounds.contains(touchPoint){
+            calculatePercentMove(with: touchPoint)
+          
+            
+            
+            let sliderContainerWidth = self.bounds.width
+            let startPosition  = ball.frame.width + 5
+            let endPosition = sliderContainerWidth - 5
+            let x = Double(endPosition - startPosition) * percentageComplete
+            
+            ball.frame = CGRect(x: CGFloat(x), y: ball.frame.origin.y, width: ballWidth, height: ballWidth) //width may need to be different
+            
+            sendActions(for: [.touchDragInside, .valueChanged])
+ 
+            
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        <#code#>
+        guard let touch = touch else {return}
+        
+        let touchPoint = touch.location(in: self)
+        
+        if bounds.contains(touchPoint) {
+            calculatePercentMove(with: touchPoint)
+            if percentageComplete < 0.8 {
+                ball.frame = CGRect(x: 5, y: 5, width: ballWidth, height: ballWidth)
+                isUnlocked = false
+            } else {
+                ball.frame = CGRect(x: self.bounds.width - ball.frame.width - 5 , y: 5, width: ballWidth, height: ballWidth)
+                isUnlocked = true
+                self.isUserInteractionEnabled = false
+            }
+            sendActions(for: [.touchUpOutside, .valueChanged])
+            
+        } else {
+            ball.frame = CGRect (x: self.bounds.width - ball.frame.width - 5, y: 5, width: ballWidth, height: ballWidth)
+            isUnlocked = true
+            self.isUserInteractionEnabled = false
+        }
+        sendActions(for: .touchUpOutside)
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        <#code#>
+        sendActions(for: .touchCancel)
+        super.cancelTracking(with: event)
     }
     
+    func reset() {
+            isUnlocked = false
+            self.isUserInteractionEnabled = true
+            percentageComplete = 0
+            layoutSubviews()    
+        }
 //    private var circleWidth: CGFloat {
 //        return frame.height * 0.825
 //    }
