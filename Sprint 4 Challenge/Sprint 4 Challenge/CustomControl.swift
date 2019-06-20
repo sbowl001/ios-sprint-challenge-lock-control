@@ -31,12 +31,13 @@ class CustomControl: UIControl {
     
    private func configureBall() {
     
-        ball.isUserInteractionEnabled = true
+        ball.isUserInteractionEnabled = false 
         ball.frame = CGRect(x: 5, y: 5, width: ballWidth, height: ballWidth)
         ball.backgroundColor = .black
         ball.layer.cornerRadius = ballWidth / 2
         
         self.addSubview(ball)
+        print("ball frame size: \(ball.frame)")
     }
     
     
@@ -44,11 +45,13 @@ class CustomControl: UIControl {
         //from within the width of ballFrame slider
         
         let sliderContainerWidth = self.bounds.width
-        let startPosition  = ball.frame.width + 5
-        let endPosition = sliderContainerWidth - 5
+        let startPosition  = ball.frame.width + 5  //+5
+        let endPosition = sliderContainerWidth - 5   //-5
         let distance = startPosition - touchPoint.x
         let percentCalculated = Double(distance / (endPosition - startPosition))
         percentageComplete = abs(percentCalculated)
+        print("start position: \(startPosition)")
+        print("end position: \(endPosition)")
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -71,8 +74,8 @@ class CustomControl: UIControl {
             
             
             let sliderContainerWidth = self.bounds.width
-            let startPosition  = ball.frame.width + 5
-            let endPosition = sliderContainerWidth - 5
+            let startPosition  = ball.frame.width + 5 //+5
+            let endPosition = sliderContainerWidth - 5  //-5
             let x = Double(endPosition - startPosition) * percentageComplete
             
             ball.frame = CGRect(x: CGFloat(x), y: ball.frame.origin.y, width: ballWidth, height: ballWidth) //width may need to be different
@@ -81,7 +84,9 @@ class CustomControl: UIControl {
  
             
         } else {
+            ball.frame = CGRect(x: 5, y: 5, width: ballWidth, height: ballWidth)
             sendActions(for: [.touchDragOutside])
+            
         }
         return true
     }
@@ -99,16 +104,17 @@ class CustomControl: UIControl {
             } else {
                 ball.frame = CGRect(x: self.bounds.width - ball.frame.width - 5 , y: 5, width: ballWidth, height: ballWidth)
                 isUnlocked = true
-                self.isUserInteractionEnabled = false
+//                self.isUserInteractionEnabled = false
             }
             sendActions(for: [.touchUpOutside, .valueChanged])
             
-        } else {
-            ball.frame = CGRect (x: self.bounds.width - ball.frame.width - 5, y: 5, width: ballWidth, height: ballWidth)
-            isUnlocked = true
-            self.isUserInteractionEnabled = false
         }
-        sendActions(for: .touchUpOutside)
+//            else {
+//            ball.frame = CGRect (x: self.bounds.width - ball.frame.width - 5, y: 5, width: ballWidth, height: ballWidth)
+//            isUnlocked = true
+//            self.isUserInteractionEnabled = false
+//        }
+//        sendActions(for: .touchUpOutside)
     }
     
     override func cancelTracking(with event: UIEvent?) {

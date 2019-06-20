@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         if customControl.isUnlocked {
             lockImage.image = UIImage(named: "Unlocked")
-            customControl.isUserInteractionEnabled = true
+            customControl.isUserInteractionEnabled = false 
             resetButton.title = "Reset"
         }
     }
