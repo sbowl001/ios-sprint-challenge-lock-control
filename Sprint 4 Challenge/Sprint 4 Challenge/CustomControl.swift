@@ -20,8 +20,7 @@ class CustomControl: UIControl {
         return self.frame.height * 0.8
     }
  
-       
-//    var ballFrame = UIView()
+ 
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -79,7 +78,7 @@ class CustomControl: UIControl {
             let x = Double(endPosition - startPosition) * percentageComplete
             
             ball.frame = CGRect(x: CGFloat(x), y: ball.frame.origin.y, width: ballWidth, height: ballWidth) //width may need to be different
-            
+     
             sendActions(for: [.touchDragInside, .valueChanged])
  
             
@@ -92,6 +91,10 @@ class CustomControl: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        
+        
+        defer { super.endTracking(touch, with: event)}
+
         guard let touch = touch else {return}
         
         let touchPoint = touch.location(in: self)
@@ -99,11 +102,18 @@ class CustomControl: UIControl {
         if bounds.contains(touchPoint) {
             calculatePercentMove(with: touchPoint)
             if percentageComplete < 0.8 {
-                ball.frame = CGRect(x: 5, y: 5, width: ballWidth, height: ballWidth)
+                
                 isUnlocked = false
+                UIView.animate(withDuration: 1.0) {
+                  self.ball.frame = CGRect(x: 5, y: 5, width: self.ballWidth, height: self.ballWidth)
+                }
             } else {
-                ball.frame = CGRect(x: self.bounds.width - ball.frame.width - 5 , y: 5, width: ballWidth, height: ballWidth)
                 isUnlocked = true
+                UIView.animate(withDuration: 1.0) {
+                       self.ball.frame = CGRect(x: self.bounds.width - self.ball.frame.width - 5 , y: 5, width: self.ballWidth, height: self.ballWidth)
+                    
+                }
+               
 //                self.isUserInteractionEnabled = false
             }
             sendActions(for: [.touchUpOutside, .valueChanged])
