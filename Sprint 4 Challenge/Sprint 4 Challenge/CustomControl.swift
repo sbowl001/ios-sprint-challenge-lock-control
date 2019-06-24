@@ -55,7 +55,7 @@ class CustomControl: UIControl {
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
-        if bounds.contains(touchPoint) {
+        if ball.frame.contains(touchPoint) {
             sendActions(for: [.touchDown, .valueChanged])
         } else {
             return false
